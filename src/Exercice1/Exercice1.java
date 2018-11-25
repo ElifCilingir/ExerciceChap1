@@ -61,7 +61,7 @@ public class Exercice1 {
         else return x + (2 * mystery(x, (y - 1) / 2));
     }
 
-    
+
 
 
 }
