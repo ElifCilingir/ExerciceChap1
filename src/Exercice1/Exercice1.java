@@ -41,7 +41,7 @@ public class Exercice1 {
     }
 
     /*
-    * Cette fonction nous affiche une erreur : "java.lang.NullPointerException
+    * Cette fonction nous affiche une erreur : "java.lang.NullPointerException"
     * car la variable est à null
      */
     public static void four(){
@@ -60,4 +60,8 @@ public class Exercice1 {
         else if (y % 2==0) return 2 * mystery(x, y / 2);
         else return x + (2 * mystery(x, (y - 1) / 2));
     }
+
+    
+
+
 }
