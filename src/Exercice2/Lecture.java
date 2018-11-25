@@ -1,25 +1,30 @@
 package Exercice2;
 
 import java.io.*;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 
 public class Lecture {
     public static void main(String[] args) throws Exception {
-      //  float resultat = 0;
+        Instant start = Instant.now() ;
+        Duration duration = Duration.between(start, Instant.now()) ;
         ArrayList<String> moy = new ArrayList<String>();
         String line = null;
         try {
             BufferedReader reader= new BufferedReader(new FileReader("fichier.txt"));
             while ((line = reader.readLine()) != null) {
-             //   System.out.println(line);
+                System.out.println(line);
                 moy.add(line);
             }
             float moyenne = moyenne(moy);
-         ///   System.out.print(moyenne);
+            System.out.print("La moyenne est : "+moyenne);
             int point = point("elif.cilingir@gmail.com", moy);
-            System.out.println(point);
+            System.out.println("Le point est "+point);
         } catch(Exception e) {
             e.printStackTrace();
+        }finally {
+            System.out.println("Le temps d'excution : "+ duration.getNano());
         }
 
 
