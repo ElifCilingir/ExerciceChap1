@@ -2,6 +2,8 @@ package Exercice3;
 
 import java.util.regex.Pattern;
 
+import java.util.regex.Pattern;
+
 public class Calculchaine {
     public static double moy(String []tab) {
         double moy = 0;
@@ -27,7 +29,7 @@ public class Calculchaine {
     public static void main(String[]args){
         String []str = {"1", "2a", "3"};
 
-            System.out.println(moy(str));
+        System.out.println(moy(str));
 
 
     }
