@@ -7,27 +7,31 @@ import java.util.regex.Pattern;
 public class Calculchaine {
     public static double moy(String []tab) {
         double moy = 0;
+        int erreur = 0;
         for(int i = 0; i < tab.length; i++){
             try{
                 moy = test(tab, i, moy);
+               // System.out.println(moy);
             }catch(CalculException c){
-                c.printStackTrace();
+                erreur ++;
+               // c.printStackTrace();
             }
         }
-        moy = moy / tab.length;
+        moy = moy / (tab.length - erreur);
         return moy;
     }
 
     public static double test(String []tab, int j,double moy) throws CalculException{
-        if(Pattern.matches("[0-9]", tab[j]) == true ){
+        try{
             moy = Double.parseDouble(tab[j]) + moy;
-        }else{
+            return moy;
+        }catch (NumberFormatException nbf){
             throw new CalculException();
         }
-        return moy;
+
     }
     public static void main(String[]args){
-        String []str = {"1", "2a", "3"};
+        String []str = {"a1", "2", "3"};
 
         System.out.println(moy(str));
 

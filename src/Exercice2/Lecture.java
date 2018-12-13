@@ -8,8 +8,7 @@ import java.util.ArrayList;
 public class Lecture {
     public static void main(String[] args) throws Exception {
         Instant start = Instant.now() ;
-        Duration duration = Duration.between(start, Instant.now()) ;
-       // long durationSecond = duration.getSeconds();
+
         ArrayList<String> moy = new ArrayList<String>();
         String line = null;
         try {
@@ -25,6 +24,7 @@ public class Lecture {
         } catch(Exception e) {
             e.printStackTrace();
         }finally {
+            Duration duration = Duration.between(start, Instant.now()) ;
             System.out.println("Le temps d'excution : "+ duration.minusMillis(2));
         }
 
